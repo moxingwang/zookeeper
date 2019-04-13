@@ -10,7 +10,7 @@ import org.apache.zookeeper.data.Stat;
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;
 
-public class ZookeeperApplication {
+public class WatchExample {
 
 
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {

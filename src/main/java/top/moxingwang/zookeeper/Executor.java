@@ -28,8 +28,12 @@ public class Executor
                     String exec[]) throws KeeperException, IOException {
         this.filename = filename;
         this.exec = exec;
+
+
         zk = new ZooKeeper(hostPort, 3000, this);
         dm = new DataMonitor(zk, znode, null, this);
+
+
     }
 
     /**

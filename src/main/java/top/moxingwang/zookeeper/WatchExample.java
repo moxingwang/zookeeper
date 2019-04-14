@@ -33,7 +33,8 @@ public class WatchExample {
 
             try {
                 Stat stat = new Stat();
-                byte[] data = zk.getData("/a", true, stat);
+                byte[] data = zk.getData("/e", true, stat);
+
                 System.out.println(new String(data));
 
             } catch (KeeperException e) {

@@ -4,7 +4,6 @@ import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
-import org.apache.zookeeper.ZooDefs.Ids;
 import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
@@ -21,7 +20,7 @@ public class WatchExample {
                 zk = new ZooKeeper("localhost:2181", 3000, new Watcher() {
                     @Override
                     public void process(WatchedEvent watchedEvent) {
-                        System.out.println(watchedEvent.getPath());
+                        System.out.println("watch到数据：" + watchedEvent.getPath());
                     }
                 });
             } catch (IOException e) {
@@ -33,7 +32,7 @@ public class WatchExample {
                 byte[] data = zk.getData("/a", true, stat);
                 // zk.create(path, data, Ids.OPEN_ACL_UNSAFE, createMode)
 
-                System.out.println(new String(data));
+                System.out.println("获取到数据：" + new String(data));
 
             } catch (KeeperException e) {
                 e.printStackTrace();

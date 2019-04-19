@@ -17,7 +17,7 @@ public class WatchExample {
         new Thread(() -> {
             ZooKeeper zk = null;
             try {
-                zk = new ZooKeeper("localhost:2181", 3000, new Watcher() {
+                zk = new ZooKeeper("localhost1:2181,localhost3:2181,localhost2:2181,localhost3:2181", 3000, new Watcher() {
                     @Override
                     public void process(WatchedEvent watchedEvent) {
                         System.out.println("watch到数据：" + watchedEvent.getPath());

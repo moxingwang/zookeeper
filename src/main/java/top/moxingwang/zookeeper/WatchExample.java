@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class WatchExample {
 
-    public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         CountDownLatch countDownLatch = new CountDownLatch(1);
 
         new Thread(() -> {
